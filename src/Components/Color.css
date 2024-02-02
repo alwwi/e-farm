@@ -1,0 +1,16 @@
+.bg-color{
+    background-color: #023E24;
+}
+
+
+.txt-color{
+    color: #DBAE84;
+}
+.txt-color:hover{
+    border-bottom: 3px solid #DBAE84;
+}
+
+.txt-brand{
+    color: #DBAE84;
+
+}

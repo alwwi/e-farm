@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Unna';
+    src: url('../../Font-Assets/Unna/Unna-Bold.ttf') format('truetype');
+}
+
+.txt-brand{
+    font-family: 'Unna';
+    font-size: 38px;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../Font-Assets/Poppins/Poppins-Bold.ttf') format('truetype');
+}
+.txt-navbar{
+    font-family: 'Poppins';
+    font-size: 16.67px;
+}
