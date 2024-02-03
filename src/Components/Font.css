@@ -1,3 +1,4 @@
+/* mengatur font untuk brand */
 @font-face {
     font-family: 'Unna';
     src: url('../../Font-Assets/Unna/Unna-Bold.ttf') format('truetype');
@@ -8,11 +9,34 @@
     font-size: 38px;
 }
 
+/* mengatur font untuk navbar */
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Poppins-Bold';
     src: url('../../Font-Assets/Poppins/Poppins-Bold.ttf') format('truetype');
 }
 .txt-navbar{
-    font-family: 'Poppins';
+    font-family: 'Poppins-Bold';
     font-size: 16.67px;
+}
+
+@font-face {
+    font-family: 'Poppins-SemiBold';
+    src: url('../../Font-Assets/Poppins/Poppins-SemiBold.ttf') format('truetype');
+}
+.txt-footer{
+    font-family: 'Poppins-semiBold';
+    font-size: 16px;
+}
+.txt-brand-footer{
+    font-family: 'Poppins-semiBold';
+    font-size: 22px;
+}
+
+@font-face {
+    font-family: 'Poppins-medium';
+    src: url('../../Font-Assets/Poppins/Poppins-Medium.ttf') format('truetype');
+}
+.txt-medium{
+    font-family: 'Poppins-Medium';
+    font-size: 16px;
 }
