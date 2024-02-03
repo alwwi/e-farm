@@ -1,16 +1,23 @@
+/* memberikan warna pada background utama */
 .bg-color{
     background-color: #023E24;
-}
+} 
 
 
 .txt-color{
-    color: #DBAE84;
+    color: #DBAE84; /* memberikan warna pada text navbar */
 }
 .txt-color:hover{
-    border-bottom: 3px solid #DBAE84;
+    border-bottom: 3px solid #DBAE84; /* memberikan border saat hover pada navbar */
 }
 
 .txt-brand{
-    color: #DBAE84;
+    color: #DBAE84; /* memberikan warna pada text brand */
 
+}
+
+/* mengatur warna pada footer */
+.bg-footer{
+    background-color: #F2E8DF;
+    text-color: #000;
 }
