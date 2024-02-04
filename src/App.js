@@ -1,13 +1,14 @@
 // import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import CustomNavbar from './Components/CustomNavbar';
-import Footer from './Components/Footer';
+import CstmButton from './Components/CstmButton';
+import BtnOutline from './Components/BtnOutline';
 
 function App() {
   return (
     <div className="App">
-      <Footer />
+      <CstmButton />
+      <BtnOutline />
     </div>
   );
 }
