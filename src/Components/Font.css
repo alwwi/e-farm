@@ -31,6 +31,10 @@
     font-family: 'Poppins-semiBold';
     font-size: 22px;
 }
+.txt-button{
+    font-family: 'Poppins-semiBold';
+    font-size: 17px;
+}
 
 @font-face {
     font-family: 'Poppins-medium';
