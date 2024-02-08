@@ -1,14 +1,16 @@
 // import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CstmButton from './Components/CstmButton';
-import BtnOutline from './Components/BtnOutline';
+// import Dashboard from './Pages/Dashboard';
+// import CustomCard from './Components/CustomCard';
+import Dashboard from './Pages/Dashboard';
+
 
 function App() {
   return (
     <div className="App">
-      <CstmButton />
-      <BtnOutline />
+      {/* <CustomCard /> */}
+      <Dashboard />
     </div>
   );
 }
