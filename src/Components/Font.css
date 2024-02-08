@@ -14,23 +14,23 @@
     font-family: 'Poppins-Bold';
     src: url('../../Font-Assets/Poppins/Poppins-Bold.ttf') format('truetype');
 }
-.txt-navbar{
+.txt-poppins-bold{
     font-family: 'Poppins-Bold';
-    font-size: 16.67px;
+    /* font-size: 16.67px; */
 }
 
 @font-face {
     font-family: 'Poppins-SemiBold';
     src: url('../../Font-Assets/Poppins/Poppins-SemiBold.ttf') format('truetype');
 }
-.txt-footer{
+.txt-poppins-semiBold{
     font-family: 'Poppins-semiBold';
     font-size: 16px;
 }
-.txt-brand-footer{
+/* .txt-brand-footer{
     font-family: 'Poppins-semiBold';
     font-size: 22px;
-}
+} */
 .txt-button{
     font-family: 'Poppins-semiBold';
     font-size: 17px;
@@ -40,7 +40,7 @@
     font-family: 'Poppins-medium';
     src: url('../../Font-Assets/Poppins/Poppins-Medium.ttf') format('truetype');
 }
-.txt-medium{
+.txt-poppins-medium{
     font-family: 'Poppins-Medium';
-    font-size: 16px;
+    /* font-size: 16px; */
 }
