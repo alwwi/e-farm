@@ -25,3 +25,9 @@
     background-color:#BC6949;
     color: #fff;
 }
+
+.bg-transparent .modal-content{
+    background-color: red; /* Contoh untuk background semi-transparan */
+    border-radius: 27px;
+  }
+  
