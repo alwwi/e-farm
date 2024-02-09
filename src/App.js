@@ -1,15 +1,15 @@
 // import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Dashboard from './Pages/Dashboard';
 // import CustomCard from './Components/CustomCard';
 import Dashboard from './Pages/Dashboard';
+// import Login from './Pages/Login';
 
 
 function App() {
   return (
     <div className="App">
-      {/* <CustomCard /> */}
+      {/* <Login /> */}
       <Dashboard />
     </div>
   );

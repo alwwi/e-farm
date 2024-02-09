@@ -1,11 +1,21 @@
-import React, { Component } from 'react'
-import { Navbar, Container, Nav } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Navbar, Container, Nav, Modal } from 'react-bootstrap'
 import './Color.css';
 import './Font.css';
+import Login from '../Pages/Login';
 
-export default class CustomNavbar extends Component {
-  render() {
+function CustomNavbar() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
     return (
+      <>
+      <Modal show={show} onHide={handleClose} size='lg'>
+        <Login />
+      </Modal>
+
       <div>
         <Navbar data-bs-theme="dark" className='bg-color custom-navbar' style={{borderBottom: '6px solid #DBAE84', height:'66px'}}>
         <Container>
@@ -15,7 +25,7 @@ export default class CustomNavbar extends Component {
             <Nav.Link className='txt-underline txt-poppins-bold mx-3' href="#home" style={{fontSize:'16.67px'}}>Product</Nav.Link>
             <Nav.Link className='txt-underline txt-poppins-bold mx-3' href="#solution" style={{fontSize:'16.67px'}}>Solution</Nav.Link>
             <Nav.Link className='txt-underline txt-poppins-bold mx-3' href="#blog" style={{fontSize:'16.67px'}}>Blog</Nav.Link>
-                <Nav.Link className='txt-underline txt-poppins-bold d-flex align-items-center' href="#pricing" style={{fontSize:'16.67px'}} >
+                <Nav.Link onClick={handleShow} className='txt-underline txt-poppins-bold d-flex align-items-center' style={{fontSize:'16.67px'}} >
                     {/* menampilkan icon untuk login */}
                 <img
                 alt=''
@@ -28,6 +38,8 @@ export default class CustomNavbar extends Component {
         </Container>
       </Navbar>
       </div>
+    </>
     )
-  }
 }
+
+export default CustomNavbar;
