@@ -30,4 +30,16 @@
     background-color: red; /* Contoh untuk background semi-transparan */
     border-radius: 27px;
   }
+
+.custom-menu-variant .dropdown-menu{
+    color: #000;
+    background-color: #F2E8DF;
+}
+
+.dropdown-toggle::after {
+    /* display: none; */
+    color:#DBAE84;
+    margin-left: 8px;
+  }
+  
   

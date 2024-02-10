@@ -25,7 +25,7 @@ const Dashboard = () => {
                             e-farm memiliki fitur-fitur yang membantu untuk merawat hewan ternak,
                             seperti penjadwalan pemberian pakan dan vitamin kepada hewan ternak.
                         </p>
-                        <Button variant='link' className='d-flex align-items-center btn-link'>
+                        <Button variant='link' className='d-flex align-items-center btn-delete-link'>
                             <p className='txt-color txt-poppins-semiBold my-0' style={{ fontSize: '14px' }}>baca selengkapnya</p>
                             <img src={`${process.env.PUBLIC_URL}Image-Assets/svg/arrow.svg`} alt='' style={{ marginLeft: '5px', width: '13px', height: '13px' }} />
                         </Button>
@@ -58,7 +58,7 @@ const Dashboard = () => {
                             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
                             dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         </p>
-                        <Button variant='link' className='d-flex align-items-center btn-link'>
+                        <Button variant='link' className='d-flex align-items-center btn-delete-link'>
                             <p className='txt-color txt-poppins-semiBold my-0' style={{ fontSize: '14px' }}>baca selengkapnya</p>
                             <img src={`${process.env.PUBLIC_URL}Image-Assets/svg/arrow.svg`} alt='' style={{ marginLeft: '5px', width: '13px', height: '13px' }} />
                         </Button>
@@ -76,7 +76,7 @@ const Dashboard = () => {
                                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
                                 dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                             </p>
-                            <Button variant='link' className='d-flex align-items-center btn-link'>
+                            <Button variant='link' className='d-flex align-items-center btn-delete-link'>
                                 <p className='txt-color txt-poppins-semiBold my-0' style={{ color: '#023E24', fontSize: '14px' }}>baca selengkapnya</p>
                                 <img src={`${process.env.PUBLIC_URL}Image-Assets/svg/arrow-green.svg`} alt='' style={{ marginLeft: '5px', width: '13px', height: '13px' }} />
                             </Button>
