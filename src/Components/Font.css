@@ -7,6 +7,9 @@
 .txt-brand{
     font-family: 'Unna';
     font-size: 38px;
+    &:hover, &:focus {
+        color: #DBAE84; 
+    }
 }
 
 /* mengatur font untuk navbar */
@@ -42,5 +45,13 @@
 }
 .txt-poppins-medium{
     font-family: 'Poppins-Medium';
-    /* font-size: 16px; */
+}
+
+@font-face {
+    font-family: 'Poppins-light';
+    src: url('../../Font-Assets/Poppins/Poppins-Light.ttf') format('truetype');
+}
+
+.txt-poppins-light{
+    font-family: 'Poppins-Light';
 }
