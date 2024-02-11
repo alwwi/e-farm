@@ -1,4 +1,6 @@
+import { app } from '../ConnectToDB/Firebase-config';
 import React, { useState } from 'react'
+import { getDatabase, ref, query, orderByChild, equalTo, get } from 'firebase/database';
 import { Button, Container, Form, InputGroup } from 'react-bootstrap'
 import '../Components/Font.css'
 import Register from './Register';
@@ -7,12 +9,48 @@ import Register from './Register';
 function Login() {
     const [validated, setValidated] = useState(false);
     const [formType, setFormType] = useState('login')
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const login = async (email, password) => {
+        console.log('attemping login with:', email, password);
+
+        const db = getDatabase(app);
+        console.log('db', db);
+        const userRef = ref(db, 'user');
+        const userQuery = query(userRef, orderByChild('email'), equalTo(email));
+
+        try {
+            const snapshot = await get(userQuery);
+            if(snapshot.exists()){
+                let loginSuccess = false;
+                snapshot.forEach((childSnapshot) => {
+                    const userData = childSnapshot.val();
+                    console.log(userData);
+
+                    if(userData.password === password){
+                        loginSuccess = true;
+                    }
+                });
+                if(loginSuccess){
+                    console.log('Login Success');
+                } else {
+                    console.log('Password is incorrect');
+                }
+            } else {
+                console.log('Email is not registered');
+            }
+        } catch (error) {
+            console.log('Login Failed',error);
+        }
+    };
 
     const handleSubmit = (event) => {
+        event.preventDefault();
         const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
+
+        if (form.checkValidity()) {
+            login(email, password);
         }
         setValidated(true);
     }
@@ -39,7 +77,9 @@ function Login() {
                                 <Form.Group controlId='validationEmail'>
                                     <InputGroup hasValidation style={{ width: '280px' }}>
                                         <Form.Control
-                                            type='text'
+                                            type='email'
+                                            value={email}
+                                            onChange={(event) => { setEmail(event.target.value) }}
                                             placeholder='Email Address'
                                             required style={{ borderRadius: '6.5px', height: '42px' }}
                                         />
@@ -54,6 +94,8 @@ function Login() {
                                     <Form.Control
                                         type='password'
                                         placeholder='Password'
+                                        value={password}
+                                        onChange={(event) => { setPassword(event.target.value) }}
                                         required style={{ borderRadius: '6.5px', height: '42px', width: '280px' }}
                                     />
                                     <Form.Control.Feedback type='invalid'>Please fill in your Password</Form.Control.Feedback>

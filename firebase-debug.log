@@ -1,0 +1,32 @@
+[debug] [2024-02-10T17:19:53.060Z] ----------------------------------------------------------------------
+[debug] [2024-02-10T17:19:53.061Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\MSI NOTEBOOK\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-02-10T17:19:53.062Z] CLI Version:   13.2.1
+[debug] [2024-02-10T17:19:53.062Z] Platform:      win32
+[debug] [2024-02-10T17:19:53.062Z] Node Version:  v18.16.0
+[debug] [2024-02-10T17:19:53.063Z] Time:          Sun Feb 11 2024 00:19:53 GMT+0700 (Western Indonesia Time)
+[debug] [2024-02-10T17:19:53.063Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-02-10T17:19:53.069Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-10T17:19:53.069Z] > authorizing via signed-in user (alwialatas04@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\KULYEAH\PORTOFOLIO\e-Farm-Website\e-farm
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 

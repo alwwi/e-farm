@@ -6,15 +6,14 @@ import './Hover.css';
 import Login from '../Pages/Login';
 
 function CustomNavbar() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false); // state untuk menampilkan modal
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  
-
     return (
       <>
+      {/* modal digunakan untuk menampilkan pop up untuk halaman login */}
       <Modal show={show} onHide={handleClose} size='lg'>
         <Modal.Body style={{border: '7px solid #DBAE84', borderRadius: '8px', padding:'50px'}}>
           <Login />
@@ -22,13 +21,14 @@ function CustomNavbar() {
       </Modal>
 
       <div>
-        <Navbar className='bg-color custom-navbar' style={{borderBottom: '6px solid #DBAE84', height:'66px'}}>
+        <Navbar className='bg-color custom-navbar' fixed='top' style={{borderBottom: '6px solid #DBAE84', height:'66px'}}>
         <Container>
           <Navbar.Brand className='txt-brand' href="#home">e-Farm</Navbar.Brand> {/* Nama brand sekaligus button untuk kembali ke dashboard*/}
           <Nav className="me-1">
+
             <NavDropdown
             title={<span className='txt-poppins-bold' style={{color:'#DBAE84',fontSize:'16.67px'}}>Produk</span>}
-            className='txt-underline txt-poppins-medium mx-3 custom-menu-variant bro'
+            className='txt-underline txt-poppins-medium mx-3 custom-menu-variant'
             >
               <NavDropdown.Item href="#action/3.1">Pakan</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Vitamin</NavDropdown.Item>
