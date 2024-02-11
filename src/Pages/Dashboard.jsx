@@ -16,7 +16,7 @@ const Dashboard = () => {
 
             <CustomNavbar />
 
-            <Container style={{ paddingLeft: '50px', paddingRight: '50px',marginTop:'100px' }}>
+            <Container style={{ paddingLeft: '50px', paddingRight: '50px',paddingTop:'200px' }}>
                 <Row>
                     <Col className='text-start'>
                         <h1 className='txt-poppins-bold' style={{ width: '488px', textAlign: 'left' }}>Solusi Bagi Anda yang Memiliki Peternakan</h1>
@@ -36,7 +36,7 @@ const Dashboard = () => {
                 </Row>
             </Container>
 
-            <Container style={{ width: '900px',marginTop:'150px' }}>
+            <Container style={{ width: '900px',marginTop:'200px' }}>
                 <h2 className='txt-poppins-semiBold' style={{ fontSize: '38.67px' }}>
                     Hewan Ternak Apa Saja yang Dapat Dibantu Menggunakan E-Farm Saat Ini ?
                 </h2>

@@ -1,19 +1,93 @@
+import { app } from '../ConnectToDB/Firebase-config';
+import { getDatabase ,ref, push, child, get} from 'firebase/database';
 import React, { useState } from 'react';
-import { Button, Form, InputGroup } from 'react-bootstrap';
+import { Alert, Button, Form, InputGroup } from 'react-bootstrap';  
 import '../Components/Font.css';
 import '../Components/Color.css';
 
 function Register() {
-    const [validated, setValidated] = useState(false);
+    const [validated, setValidated] = useState(false); // state untuk menampilkan pesan error, dan memvalidasi form apakah sudah terisi atau belum
+    const [username, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async(event) => {
+        event.preventDefault();
+        const usernameExist = await checkUsernameExist(username);
         const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-            event.preventDefault();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!username.trim() || !email.trim() || !password.trim() || !confirmPassword.trim()) {
+            alert("Username, Email, dan Password tidak boleh kosong.");
+            return; 
+        }
+        
+        if(usernameExist){
+            alert('Username sudah digunakan, silahkan gunakan username lain!');
+            return;
+        }
+        
+        if (!emailRegex.test(email)) {
+            alert('Email tidak valid');
+            return;
+        }
+        
+        if(password !== confirmPassword){
+            alert('Password dan konfirmasi password harus sama');
+            return;
+        }else if(password.length < 6){
+            alert('password harus tidak kurang dari 6 karakter');
+            return;
+        }
+        
+        if (form.checkValidity() === true) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.preventDefault();
+        const db = getDatabase(app);
+        const userRef = ref(db,'user');
+        push(userRef,{
+                username,email,password,confirmPassword
+            })
+            .then((res) => {
+
+                setName('');
+                setEmail('');
+                setPassword('');
+                setConfirmPassword('');
+                setValidated(false);
+
+                // setValidated(false);
+
+                alert('Registrasi berhasil! Silahkan login untuk melanjutkan!');
+            })
+            .catch(error => {
+                alert('Registrasi gagal! Silahkan coba lagi!', error);
+            })
+        }else{
             event.stopPropagation();
         }
         setValidated(true);
-    };
+    }
+
+    const checkUsernameExist = async(username) => {
+        const db = ref(getDatabase(app));
+        // const userRef = ref(db,'user');
+        const snapshot = await get(child(db,'user'));
+        if ((snapshot.exists())) {
+            let exists = false;
+            snapshot.forEach((childSnapshot) => {
+                const userData = childSnapshot.val()
+                if(userData.username === username){
+                    exists = true;
+                }
+            })
+            return exists
+        }else{
+            return false
+        }   
+    }
 
     return (
         <>
@@ -23,11 +97,13 @@ function Register() {
             <br />
             <div className="d-flex justify-content-center align-items-center">
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                    <Form.Group controlId="validationEmail">
+                    <Form.Group controlId="validationUsername"> 
                         <InputGroup hasValidation style={{ width: '280px' }}>
                             <Form.Control
                                 type="text"
                                 placeholder="Username"
+                                value={username}
+                                onChange={(event) => setName(event.target.value)}
                                 required
                                 style={{ borderRadius: '6.5px', height: '42px' }}
                             />
@@ -42,6 +118,8 @@ function Register() {
                             <Form.Control
                                 type="email"
                                 placeholder="Email Address"
+                                value={email}
+                                onChange={(event) => setEmail(event.target.value)}
                                 required
                                 style={{ borderRadius: '6.5px', height: '42px' }}
                             />
@@ -55,6 +133,8 @@ function Register() {
                         <Form.Control
                             type="password"
                             placeholder="Password"
+                            value={password}
+                            onChange={(event) => setPassword(event.target.value)}
                             required
                             style={{ borderRadius: '6.5px', height: '42px', width: '280px' }}
                         />
@@ -67,6 +147,8 @@ function Register() {
                         <Form.Control
                             type="password"
                             placeholder="Confirm Password"
+                            value={confirmPassword}
+                            onChange={(event) => setConfirmPassword(event.target.value)}
                             required
                             style={{ borderRadius: '6.5px', height: '42px', width: '280px' }}
                         />
