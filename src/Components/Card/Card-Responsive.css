@@ -1,0 +1,18 @@
+
+@media screen and (max-width: 768px) {
+
+    .scroll-card{
+        height: 450px;
+        width: 80%;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .scroll-card::-webkit-scrollbar {
+        display: none;
+    }
+    .horizontal-scroll .card{
+        flex: 0 0 auto;
+    }
+  }

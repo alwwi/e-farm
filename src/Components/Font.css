@@ -28,7 +28,7 @@
 }
 .txt-poppins-semiBold{
     font-family: 'Poppins-semiBold';
-    font-size: 16px;
+    /* font-size: 16px; */
 }
 /* .txt-brand-footer{
     font-family: 'Poppins-semiBold';
@@ -54,4 +54,16 @@
 
 .txt-poppins-light{
     font-family: 'Poppins-Light';
+}
+
+
+
+
+@media (max-width: 768px) {
+    .txt-poppins-bold {
+        font-size: 24px; 
+    }
+    .txt-poppins-medium {
+        font-size: 12px; 
+    }
 }
