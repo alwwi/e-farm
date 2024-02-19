@@ -1,13 +1,16 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './Pages/Dashboard';
+import { AuthProvider } from './ConnectToDB/AuthContext';
 
 
 function App() {
   return (
-    <div className="App">
+    <AuthProvider>
+      <div className="App">
       <Dashboard />
     </div>
+    </AuthProvider>
   );
 }
 

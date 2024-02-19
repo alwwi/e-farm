@@ -7,7 +7,7 @@ import '../Components/Hover.css';
 import BtnFill from '../Components/BtnFill';
 import BtnOutline from '../Components/BtnOutline';
 import { Container, Row, Col, Image, Button, Stack } from 'react-bootstrap';
-import Footer from '../Components/Footer';
+import Footer from '../Components/Footer/Footer';
 import './Responsive-Dashboard.css';
 
 const Dashboard = () => {

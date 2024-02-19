@@ -5,6 +5,7 @@ import '../Color.css';
 import '../Font.css';
 import '../Hover.css';
 import './Navbar-responsive.css';
+import { useAuth } from '../../ConnectToDB/AuthContext';
 import Login from '../../Pages/Login';
 
 function CustomNavbar() {
@@ -12,6 +13,8 @@ function CustomNavbar() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const { currentUser, logoutUser } = useAuth();
 
   const [clicked, setClicked] = useState(false);
 
@@ -60,15 +63,38 @@ function CustomNavbar() {
                   <Nav.Link className='nav-link d-flex txt-underline txt-poppins-bold mx-3 mt-1' style={{ fontSize: '16.67px' }}>Features</Nav.Link>
                   <Nav.Link className='nav-link d-flex txt-underline txt-poppins-bold mx-3 mt-1' style={{ fontSize: '16.67px' }}>Solution</Nav.Link>
                   <Nav.Link className='nav-link d-flex txt-underline txt-poppins-bold mx-3 mt-1' style={{ fontSize: '16.67px' }}>Blog</Nav.Link>
-                  <Nav.Link onClick={handleShow} className='nav-link mx-3 txt-underline txt-poppins-bold d-flex align-items-center' style={{ fontSize: '16.67px' }} >
-                    {/* menampilkan icon untuk login */}
-                    <img
-                      alt=''
-                      src={`${process.env.PUBLIC_URL}Image-Assets/svg/account-icon.svg`}
-                      width="14"
-                      height="14"
-                      className='mx-2'
-                    />Login</Nav.Link> {/* text Login */}
+
+                  {currentUser ? (
+                    <>
+                      <Nav.Link className='d-flex txt-poppins-medium mx-3 py-0 px-0 custom-menu-variant nav-link'>
+
+                        <NavDropdown
+                          title={<span className='txt-poppins-bold' style={{ color: '#DBAE84', fontSize: '16.67px' }}>
+                            <img
+                              alt=''
+                              src={`${process.env.PUBLIC_URL}Image-Assets/svg/account-icon.svg`}
+                              width="14"
+                              height="14"
+                              className='mx-2'
+                            />{currentUser.username}</span>}
+                          className=' d-flex align-items-center'
+                        >
+                          <NavDropdown.Item onClick={logoutUser} className='dropdown-item'>Logout</NavDropdown.Item>
+                        </NavDropdown>
+                      </Nav.Link>
+                    </>
+                  ) : (
+                    <Nav.Link onClick={handleShow} className='nav-link mx-3 txt-underline txt-poppins-bold d-flex align-items-center' style={{ fontSize: '16.67px' }} >
+                      {/* menampilkan icon untuk login */}
+                      <img
+                        alt=''
+                        src={`${process.env.PUBLIC_URL}Image-Assets/svg/account-icon.svg`}
+                        width="14"
+                        height="14"
+                        className='mx-2'
+                      />Login</Nav.Link>
+                  )}
+
                 </Nav>
               </Col>
             </Navbar>

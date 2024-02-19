@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
-import './Color.css';
-import './Font.css';
+import '../Color.css';
+import '../Font.css';
 import './Footer-Responsive.css';
 
 export default class Footer extends Component {
