@@ -2,6 +2,7 @@ import { app } from '../ConnectToDB/Firebase-config';
 import React, { useState } from 'react'
 import { getDatabase, ref, query, orderByChild, equalTo, get } from 'firebase/database';
 import { Button, Container, Form, InputGroup } from 'react-bootstrap'
+import { useAuth } from '../ConnectToDB/AuthContext';
 import '../Components/Font.css'
 import Register from './Register';
 
@@ -11,6 +12,7 @@ function Login() {
     const [formType, setFormType] = useState('login')
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { loginUser } = useAuth();
 
     const login = async (email, password) => {
         console.log('attemping login with:', email, password);
@@ -24,16 +26,19 @@ function Login() {
             const snapshot = await get(userQuery);
             if(snapshot.exists()){
                 let loginSuccess = false;
+                let data;
                 snapshot.forEach((childSnapshot) => {
                     const userData = childSnapshot.val();
                     console.log(userData);
 
                     if(userData.password === password){
                         loginSuccess = true;
+                        data = userData
                     }
                 });
                 if(loginSuccess){
                     console.log('Login Success');
+                    loginUser({email, username: data.username})
                 } else {
                     console.log('Password is incorrect');
                 }
