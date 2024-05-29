@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Navbar, Container, Nav, Modal, NavDropdown, Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../Color.css';
 import '../Font.css';
@@ -38,7 +39,7 @@ function CustomNavbar() {
 
               <Col sm={4} className='d-flex justify-content-center header'>
 
-                <Navbar.Brand className='txt-brand' href="#home">e-Farm</Navbar.Brand> {/* Nama brand sekaligus button untuk kembali ke dashboard*/}
+                <Navbar.Brand className='txt-brand'>e-Farm</Navbar.Brand> {/* Nama brand sekaligus button untuk kembali ke dashboard*/}
                 <div className='menu-icons' onClick={handleClick}>
                   <i className={clicked ? 'bi bi-x-lg' : 'bi bi-list'}>
 
@@ -48,6 +49,8 @@ function CustomNavbar() {
               </Col>
 
               <Col sm={9} className='d-flex justify-content-center'>
+                
+
                 <Nav className={clicked ? "nav-menu active" : "nav-menu"}>
 
                   <Nav.Link className='d-flex txt-underline txt-poppins-medium mx-3 py-1 px-0 custom-menu-variant nav-link'>
@@ -55,9 +58,9 @@ function CustomNavbar() {
                       title={<span className='txt-poppins-bold' style={{ color: '#DBAE84', fontSize: '16.67px' }}>Produk</span>}
                       className=''
                     >
-                      <NavDropdown.Item className='dropdown-item' href="#action/3.1">Pakan</NavDropdown.Item>
-                      <NavDropdown.Item className='dropdown-item' href="#action/3.2">Vitamin</NavDropdown.Item>
-                      <NavDropdown.Item className='dropdown-item' href="#action/3.3">Pengelolaan</NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to='/pakan' className='dropdown-item' >Pakan</NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to='/shop' className='dropdown-item' >Vitamin</NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to='/pengolahan' className='dropdown-item' >Pengelolaan</NavDropdown.Item>
                     </NavDropdown>
                   </Nav.Link>
                   <Nav.Link className='nav-link d-flex txt-underline txt-poppins-bold mx-3 mt-1' style={{ fontSize: '16.67px' }}>Features</Nav.Link>
@@ -96,6 +99,8 @@ function CustomNavbar() {
                   )}
 
                 </Nav>
+                
+
               </Col>
             </Navbar>
           </Row>

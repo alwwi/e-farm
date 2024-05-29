@@ -1,7 +1,7 @@
 import { app } from '../ConnectToDB/Firebase-config';
 import { getDatabase ,ref, push, child, get} from 'firebase/database';
 import React, { useState } from 'react';
-import { Alert, Button, Form, InputGroup } from 'react-bootstrap';  
+import {  Button, Form, InputGroup } from 'react-bootstrap';  
 import '../Components/Font.css';
 import '../Components/Color.css';
 
