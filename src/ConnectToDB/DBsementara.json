@@ -1,0 +1,37 @@
+{
+    "product" : [
+        {
+            "id" : "1",
+            "name" : "Rake/Garpu Tanah",
+            "price" : "Rp.120.000,00",
+            "image" : "product1.jpg",
+            "description" : "Description 1",
+            "location" : "Kab. Sleman",
+            "category" : "farmer-tools"
+        },{
+            "id" : "2",
+            "name" : "Vitamin Ayam",
+            "price" : "Rp.53.000,00",
+            "image" : "product2.jpg",
+            "description" : "Description 1",
+            "location" : "Kab. Sleman",
+            "category" : "vitamin"
+        },{
+            "id" : "3",
+            "name" : "Tag nomor sapi",
+            "price" : "Rp.349.000,00",
+            "image" : "product3.jpg",
+            "description" : "Description 1",
+            "location" : "Kab. Sleman",
+            "category" : "accessories"
+        },{
+            "id" : "4",
+            "name" : "Ayam pedaging",
+            "price" : "Rp.20.000,00",
+            "image" : "product4.jpg",
+            "description" : "Description 1",
+            "location" : "Kab. Sleman",
+            "category" : "cattles"
+        }
+    ]
+}
