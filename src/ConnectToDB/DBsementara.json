@@ -3,33 +3,37 @@
         {
             "id" : "1",
             "name" : "Rake/Garpu Tanah",
-            "price" : "Rp.120.000,00",
-            "image" : "product1.jpg",
-            "description" : "Description 1",
+            "price" : "120.000",
+            "image" : "/Image-Assets/tools-product/rake.jpg",
+            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "specification" : "Specification 1",
             "location" : "Kab. Sleman",
             "category" : "farmer-tools"
         },{
             "id" : "2",
             "name" : "Vitamin Ayam",
-            "price" : "Rp.53.000,00",
-            "image" : "product2.jpg",
+            "price" : "53.000",
+            "image" : "/Image-Assets/vitamin/vitamin-ayam.jpg",
             "description" : "Description 1",
+            "specification" : "Specification 1",
             "location" : "Kab. Sleman",
             "category" : "vitamin"
         },{
             "id" : "3",
             "name" : "Tag nomor sapi",
-            "price" : "Rp.349.000,00",
-            "image" : "product3.jpg",
+            "price" : "349.000",
+            "image" : "/Image-Assets/accessories/tag-sapi.jpg",
             "description" : "Description 1",
+            "specification" : "Specification 1",
             "location" : "Kab. Sleman",
             "category" : "accessories"
         },{
             "id" : "4",
             "name" : "Ayam pedaging",
-            "price" : "Rp.20.000,00",
-            "image" : "product4.jpg",
+            "price" : "20.000",
+            "image" : "/Image-Assets/cattles/ayam.jpg",
             "description" : "Description 1",
+            "specification" : "Specification 1",
             "location" : "Kab. Sleman",
             "category" : "cattles"
         }

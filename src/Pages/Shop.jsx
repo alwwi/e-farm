@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import data from '../ConnectToDB/DBsementara.json'
+import { Link } from 'react-router-dom'
 
 const Shop = () => {
     const [activeButton, setActiveButton] = useState(null)
@@ -37,15 +38,15 @@ const Shop = () => {
             }`}>Cattles</button>
         </div>
       </div>
-      <div className='flex-grow w-3/4 border-solid border-2 border-black'>
-        <div className='grid grid-cols-1 md:grid-cols lg:grid-cols-3 gap-3'>
+      <div className='flex-grow w-3/4 px-5'>
+        <div className='grid grid-cols-5'>
             {filterProduct.map((item) => (
-                <div key={item.id} className='bg-white p-5'>
-                    <img src={item.image} alt={item.name} className='w-full h-40 object-cover' />
-                    <h1 className='font-semibold mt-2'>{item.name}</h1>
-                    <p className='text-sm'>{item.description}</p>
-                    <p className='font-semibold mt-2'>Rp {item.price}</p>
-                </div>
+                <Link to={`/item/${item.id}`} key={item.id} className='cursor-pointer focus:bg-red px-2 shadow-card flex flex-col rounded-[21px] text-left font-poppins h-[270px] w-[190px] relative pt-1'>
+                    <img src={item.image} alt={item.name} className='w-full h-[150px]'/>
+                    <p className='font-medium mt-3 float-left text-[13px]'>{item.name}</p>
+                    <p className='font-semibold float-left text-[14px]'>Rp {item.price},00</p>
+                    <p className='text-[10px] absolute bottom-0'>{item.location}</p>
+                </Link>
             ))}
         </div>
       </div>

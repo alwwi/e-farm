@@ -39,7 +39,7 @@ function CustomNavbar() {
 
               <Col sm={4} className='d-flex justify-content-center header'>
 
-                <Navbar.Brand className='txt-brand'>e-Farm</Navbar.Brand> {/* Nama brand sekaligus button untuk kembali ke dashboard*/}
+                <Navbar.Brand as={Link} to='/' className='txt-brand'>e-Farm</Navbar.Brand> {/* Nama brand sekaligus button untuk kembali ke dashboard*/}
                 <div className='menu-icons' onClick={handleClick}>
                   <i className={clicked ? 'bi bi-x-lg' : 'bi bi-list'}>
 
@@ -59,7 +59,7 @@ function CustomNavbar() {
                       className=''
                     >
                       <NavDropdown.Item as={Link} to='/pakan' className='dropdown-item' >Pakan</NavDropdown.Item>
-                      <NavDropdown.Item as={Link} to='/shop' className='dropdown-item' >Vitamin</NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to='/shop' className='dropdown-item' >Shop</NavDropdown.Item>
                       <NavDropdown.Item as={Link} to='/pengolahan' className='dropdown-item' >Pengelolaan</NavDropdown.Item>
                     </NavDropdown>
                   </Nav.Link>
