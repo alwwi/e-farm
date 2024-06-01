@@ -6,6 +6,7 @@ import { AuthProvider } from './ConnectToDB/AuthContext';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CustomNavbar from './Components/Navbar/CustomNavbar';
 import { useEffect, useState } from 'react';
+import Item from './Pages/Item-Description';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/shop" element={<Shop data={data} />} />
+          <Route path="/item/:id" element={<Item data={data} />} />
         </Routes>
     </div>
       </Router>
