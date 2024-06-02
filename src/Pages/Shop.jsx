@@ -1,18 +1,34 @@
 import React, { useEffect, useState } from 'react'
-import data from '../ConnectToDB/DBsementara.json'
+// import data from '/DB/DBsementara.json'
 import { Link } from 'react-router-dom'
 
 const Shop = () => {
     const [activeButton, setActiveButton] = useState(null)
     const [product, setProduct] = useState([])
+    const [data, setData] = useState(null)
+
+    useEffect(() => {
+        fetch('/DB/DBsementara.json')
+        .then((response)=>{
+            if(!response.ok){
+                throw new Error('Network response was not ok')
+            }
+            return response.json()
+        })
+        .then((data)=>{
+            setData(data)
+            setProduct(data.product)
+        })
+        .catch((error)=>console.error('Error fetching data:', error))
+    },[])
 
     const show = (category) => {
         setActiveButton(category)
     }
 
-    useEffect(() => {
-        setProduct(data.product)
-    },[])
+    // useEffect(() => {
+    //     setProduct(data.product)
+    // },[])
 
     const filterProduct = activeButton
     ? product.filter((item) => item.category === activeButton)
@@ -41,7 +57,7 @@ const Shop = () => {
       <div className='flex-grow w-3/4 px-5'>
         <div className='grid grid-cols-5'>
             {filterProduct.map((item) => (
-                <Link to={`/item/${item.id}`} key={item.id} className='cursor-pointer focus:bg-red px-2 shadow-card flex flex-col rounded-[21px] text-left font-poppins h-[270px] w-[190px] relative pt-1'>
+                <Link to={`/item/${item.id}`} key={item.id} className='cursor-pointer focus:bg-red px-2 shadow-card flex flex-col rounded-[21px] text-left font-poppins h-[270px] w-[190px] relative pt-1 text-black'>
                     <img src={item.image} alt={item.name} className='w-full h-[150px]'/>
                     <p className='font-medium mt-3 float-left text-[13px]'>{item.name}</p>
                     <p className='font-semibold float-left text-[14px]'>Rp {item.price},00</p>

@@ -13,9 +13,17 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('./ConnectToDB/DBsementara.json')
-    .then((response)=>response.json())
-    .then((data)=>setData(data.product));
+    fetch('/DB/DBsementara.json')
+    .then((response)=>{
+      if(!response.ok){
+        throw new Error('Network response was not ok')
+      }
+      return response.json()
+    
+    })
+    // .then((response)=>response.json())
+    .then((data)=>setData(data.product))
+    .catch((error)=>console.error('Error fetching data:', error))
   }, []);
 
   return (

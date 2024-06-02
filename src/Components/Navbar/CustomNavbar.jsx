@@ -53,7 +53,7 @@ function CustomNavbar() {
 
                 <Nav className={clicked ? "nav-menu active" : "nav-menu"}>
 
-                  <Nav.Link className='d-flex txt-underline txt-poppins-medium mx-3 py-1 px-0 custom-menu-variant nav-link'>
+                  <Nav className='d-flex txt-underline txt-poppins-medium mx-3 py-1 px-0 custom-menu-variant nav-link'>
                     <NavDropdown
                       title={<span className='txt-poppins-bold' style={{ color: '#DBAE84', fontSize: '16.67px' }}>Produk</span>}
                       className=''
@@ -62,7 +62,7 @@ function CustomNavbar() {
                       <NavDropdown.Item as={Link} to='/shop' className='dropdown-item' >Shop</NavDropdown.Item>
                       <NavDropdown.Item as={Link} to='/pengolahan' className='dropdown-item' >Pengelolaan</NavDropdown.Item>
                     </NavDropdown>
-                  </Nav.Link>
+                  </Nav>
                   <Nav.Link className='nav-link d-flex txt-underline txt-poppins-bold mx-3 mt-1' style={{ fontSize: '16.67px' }}>Features</Nav.Link>
                   <Nav.Link className='nav-link d-flex txt-underline txt-poppins-bold mx-3 mt-1' style={{ fontSize: '16.67px' }}>Solution</Nav.Link>
                   <Nav.Link className='nav-link d-flex txt-underline txt-poppins-bold mx-3 mt-1' style={{ fontSize: '16.67px' }}>Blog</Nav.Link>

@@ -1,21 +1,39 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import data from '../ConnectToDB/DBsementara.json'
+// import data from '../ConnectToDB/DBsementara.json'
 
 const ItemDesc = () => {
+
+    const [view, setView] = useState('description')
+    const [data, setData] = useState(null)
     const { id } = useParams();
+
+    useEffect(() => {
+        fetch('/DB/DBsementara.json')
+        .then((response)=>{
+            if(!response.ok){
+                throw new Error('Network response was not ok')
+            }
+            return response.json()
+        })
+        .then((data)=>setData(data))
+        .catch((error)=>{
+            console.error('Error fetching data:', error)
+            throw Error
+        })
+    },[])
+
     
     if(!data){
-        <h1>Data not found</h1>
+        return <h1>Data not found</h1>
     }
     const product = data.product.find((item) => item.id === id);
 
     
     if(!product){
-        <h1>Item not found</h1>
+        return <h1>Item not found</h1>
     }
     
-    const [view, setView] = useState('description')
 
     const visible =(view) => {
         setView(view)
