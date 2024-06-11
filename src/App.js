@@ -7,6 +7,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CustomNavbar from './Components/Navbar/CustomNavbar';
 import { useEffect, useState } from 'react';
 import Item from './Pages/Item-Description';
+import Features from './Pages/Features';
+import Collaboration from './Pages/Collaboration';
+import Blog from './Pages/Blog';
 
 
 function App() {
@@ -21,7 +24,6 @@ function App() {
       return response.json()
     
     })
-    // .then((response)=>response.json())
     .then((data)=>setData(data.product))
     .catch((error)=>console.error('Error fetching data:', error))
   }, []);
@@ -35,6 +37,9 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/shop" element={<Shop data={data} />} />
           <Route path="/item/:id" element={<Item data={data} />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/collaboration" element={<Collaboration />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
     </div>
       </Router>

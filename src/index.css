@@ -23,3 +23,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+input{
+  border: solid 1px black;
+  border-radius: 7px;
+  height: 35px;
+  /* width: 100%; */
+}
+
+textarea{
+  border: solid 1px black;
+  border-radius: 7px;
+  /* width: 100%; */
+}

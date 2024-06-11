@@ -58,14 +58,14 @@ function CustomNavbar() {
                       title={<span className='txt-poppins-bold' style={{ color: '#DBAE84', fontSize: '16.67px' }}>Produk</span>}
                       className=''
                     >
-                      <NavDropdown.Item as={Link} to='/pakan' className='dropdown-item' >Pakan</NavDropdown.Item>
+                      {/* <NavDropdown.Item as={Link} to='/pakan' className='dropdown-item' >Pakan</NavDropdown.Item> */}
                       <NavDropdown.Item as={Link} to='/shop' className='dropdown-item' >Shop</NavDropdown.Item>
-                      <NavDropdown.Item as={Link} to='/pengolahan' className='dropdown-item' >Pengelolaan</NavDropdown.Item>
+                      {/* <NavDropdown.Item as={Link} to='/pengolahan' className='dropdown-item' >Pengelolaan</NavDropdown.Item> */}
                     </NavDropdown>
                   </Nav>
-                  <Nav.Link className='nav-link d-flex txt-underline txt-poppins-bold mx-3 mt-1' style={{ fontSize: '16.67px' }}>Features</Nav.Link>
-                  <Nav.Link className='nav-link d-flex txt-underline txt-poppins-bold mx-3 mt-1' style={{ fontSize: '16.67px' }}>Solution</Nav.Link>
-                  <Nav.Link className='nav-link d-flex txt-underline txt-poppins-bold mx-3 mt-1' style={{ fontSize: '16.67px' }}>Blog</Nav.Link>
+                  <Nav.Link as={Link} to='/features' className='nav-link d-flex txt-underline txt-poppins-bold mx-3 mt-1' style={{ fontSize: '16.67px' }}>Features</Nav.Link>
+                  <Nav.Link as={Link} to='/collaboration' className='nav-link d-flex txt-underline txt-poppins-bold mx-3 mt-1' style={{ fontSize: '16.67px' }}>Collaboration</Nav.Link>
+                  <Nav.Link as={Link} to='/blog' className='nav-link d-flex txt-underline txt-poppins-bold mx-3 mt-1' style={{ fontSize: '16.67px' }}>Blog</Nav.Link>
 
                   {currentUser ? (
                     <>
