@@ -33,48 +33,48 @@ const Solution = () => {
           <h1>Mengapa Harus Bergabung dengan e-Farm?</h1>
         </div>
 
-        <div className='flex gap-20'>
+        <div className='flex gap-20 font-medium'>
 
           <div className='image w-[120px]'>
-            <div className='h-[120px] bg-[#C0C0C0] rounded-[21px]'>
-              <img src="" alt="" />
+            <div className='h-[120px] bg-[#C0C0C0] rounded-[21px] p-3'>
+              <img src={`${process.env.PUBLIC_URL}Image-Assets/svg/bag-asset.svg`} alt="" className='w-full' />
             </div>
-            <div className='text-[14px] text-center'>
+            <div className='text-[14px] text-center mt-3'>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Membangun bisnis ternak yang profesional dan berkelanjutan
               </p>
             </div>
           </div>
 
           <div className='image w-[120px]'>
-            <div className='h-[120px] bg-[#C0C0C0] rounded-[21px]'>
-              <img src="" alt="" />
+            <div className='h-[120px] bg-[#C0C0C0] rounded-[21px] p-3'>
+              <img src={`${process.env.PUBLIC_URL}Image-Assets/svg/management-asset.svg`} alt="" className='w-full'/>
             </div>
-            <div className='text-[14px] text-center'>
+            <div className='text-[14px] text-center mt-3'>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Atur manajemen ternak Anda sesuai kebutuhan
               </p>
             </div>
           </div>
 
           <div className='image w-[120px]'>
-            <div className='h-[120px] bg-[#C0C0C0] rounded-[21px]'>
-              <img src="" alt="" />
+            <div className='h-[120px] bg-[#C0C0C0] rounded-[21px] p-3'>
+              <img src={`${process.env.PUBLIC_URL}Image-Assets/svg/expand-asset.svg`} alt="" className='w-full' />
             </div>
-            <div className='text-[14px] text-center'>
+            <div className='text-[14px] text-center mt-3'>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Maksimalkan kapasitas panen Anda
               </p>
             </div>
           </div>
 
           <div className='image w-[120px]'>
-            <div className='h-[120px] bg-[#C0C0C0] rounded-[21px]'>
-              <img src="" alt="" />
+            <div className='h-[120px] bg-[#C0C0C0] rounded-[21px] p-3'>
+              <img src={`${process.env.PUBLIC_URL}Image-Assets/svg/give-asset.svg`} alt="" className='s' />
             </div>
-            <div className='text-[14px] text-center'>
+            <div className='text-[14px] text-center mt-3'>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Jaminan penyediaan kebutuhan peternak
               </p>
             </div>
           </div>
@@ -145,7 +145,7 @@ const Solution = () => {
             </div>
 
             <div className='btn-submit w-full text-left'>
-              <input type="submit" name="" id="" className='px-3 border-none bg-[#BC6949] text-white font-medium my-4'/>
+              <input type="submit" name="" id="" className='px-3 border-none bg-[#BC6949] text-white font-medium my-4' />
             </div>
           </form>
         </div>
@@ -153,7 +153,7 @@ const Solution = () => {
       <Footer />
     </div>
 
-    
+
   )
 }
 
