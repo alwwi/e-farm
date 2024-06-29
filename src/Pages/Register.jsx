@@ -15,7 +15,7 @@ function Register() {
     const handleSubmit = async(event) => {
         event.preventDefault();
         const usernameExist = await checkUsernameExist(username);
-        const form = event.currentTarget;
+        const form = document.getElementById('registerForm');
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!username.trim() || !email.trim() || !password.trim() || !confirmPassword.trim()) {
@@ -41,10 +41,11 @@ function Register() {
             return;
         }
         
-        if (form.checkValidity() === true) {
-        event.preventDefault();
+        if (form && form.checkValidity() === false) {
         event.stopPropagation();
-        event.preventDefault();
+        return
+        }
+
         const db = getDatabase(app);
         const userRef = ref(db,'user');
         push(userRef,{
@@ -56,18 +57,14 @@ function Register() {
                 setEmail('');
                 setPassword('');
                 setConfirmPassword('');
-                setValidated(false);
 
-                // setValidated(false);
+                setValidated(false);
 
                 alert('Registrasi berhasil! Silahkan login untuk melanjutkan!');
             })
             .catch(error => {
                 alert('Registrasi gagal! Silahkan coba lagi!', error);
             })
-        }else{
-            event.stopPropagation();
-        }
         setValidated(true);
     }
 
