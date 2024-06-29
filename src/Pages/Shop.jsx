@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-// import data from '/DB/DBsementara.json'
 import { Link } from 'react-router-dom'
 
 const Shop = () => {
     const [activeButton, setActiveButton] = useState(null)
     const [product, setProduct] = useState([])
+    const [wishlist, setWishlist] = useState([])
+    const [cart, setCart] = useState([])
     const [data, setData] = useState(null)
 
     useEffect(() => {
@@ -18,6 +19,8 @@ const Shop = () => {
         .then((data)=>{
             setData(data)
             setProduct(data.product)
+            setWishlist(data.wishlist)
+            setCart(data.cart)
         })
         .catch((error)=>console.error('Error fetching data:', error))
     },[])
@@ -26,20 +29,17 @@ const Shop = () => {
         setActiveButton(category)
     }
 
-    // useEffect(() => {
-    //     setProduct(data.product)
-    // },[])
-
-    const filterProduct = activeButton
-    ? product.filter((item) => item.category === activeButton)
+    const filterProduct = activeButton === 'wishlist' ? wishlist 
+    : activeButton === 'cart' ? cart
+    : activeButton ? product.filter((item) => item.category === activeButton)
     : product
 
     if(!data) return <h1>Loading...</h1>
 
   return (
-    <div className='flex mt-20 ml-5'>
-      <div className='flex-none w-1/5 '>
-        <div className='flex flex-col font-poppins'>
+    <div className='flex mt-20 ml-5 '>
+      <div className='flex-none w-1/5 font-poppins'>
+        <div className='flex flex-col '>
             <button onClick={() => show('vitamin')} className={`bg-soft-grey h-[40px] rounded-lg font-semibold ${
                 activeButton === 'vitamin' ? 'bg-soft-gray text-black' : 'bg-white text-[#ADADAD]'
             }`}>Vitamin</button>
@@ -52,6 +52,19 @@ const Shop = () => {
             <button onClick={() => show('cattles')} className={`bg-soft-grey h-[40px] rounded-lg font-semibold ${
                 activeButton === 'cattles' ? 'bg-soft-gray text-black' : 'bg-white text-[#ADADAD]'
             }`}>Cattles</button>
+        </div>
+        <div className='flex flex-col'>
+            <button onClick={() => show('wishlist')} className={`bg-soft-grey h-[40px] rounded-lg font-semibold ${
+                activeButton === 'wishlist' ? 'bg-soft-gray text-black' : 'bg-white text-[#ADADAD]'
+            }`}>
+                Whislist
+            </button>
+
+            <Link to={'/cart'} onClick={() => show('cart')} className={`bg-soft-grey h-[40px] rounded-lg font-semibold no-underline ${
+                activeButton === 'cart' ? 'bg-soft-gray text-black' : 'bg-white text-[#ADADAD]'
+            }`}>
+                Cart
+            </Link>
         </div>
       </div>
       <div className='flex-grow w-3/4 px-5'>

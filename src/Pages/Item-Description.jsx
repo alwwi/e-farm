@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import Buy from '../Components/BtnBuy'
 // import data from '../ConnectToDB/DBsementara.json'
 
 const ItemDesc = () => {
@@ -72,6 +73,9 @@ const ItemDesc = () => {
                 </p>
             )}
         </div>
+      </div>
+      <div className='button-buy absolute bottom-5 right-[35%]'>
+        <Buy />
       </div>
     </div>
   )

@@ -27,7 +27,7 @@ const Solution = () => {
         </div>
       </div>
 
-      <div className='w-full bg-[#E2E0DE] px-36 grid place-content-center py-16 gap-14'>
+      <div className='w-full bg-[#FBF2EA] px-36 grid place-content-center py-16 gap-14'>
 
         <div className='title'>
           <h1>Mengapa Harus Bergabung dengan e-Farm?</h1>
@@ -36,7 +36,7 @@ const Solution = () => {
         <div className='flex gap-20 font-medium'>
 
           <div className='image w-[120px]'>
-            <div className='h-[120px] bg-[#C0C0C0] rounded-[21px] p-3'>
+            <div className='h-[120px] bg-[#023E24] rounded-[21px] p-3'>
               <img src={`${process.env.PUBLIC_URL}Image-Assets/svg/bag-asset.svg`} alt="" className='w-full' />
             </div>
             <div className='text-[14px] text-center mt-3'>
@@ -47,7 +47,7 @@ const Solution = () => {
           </div>
 
           <div className='image w-[120px]'>
-            <div className='h-[120px] bg-[#C0C0C0] rounded-[21px] p-3'>
+            <div className='h-[120px] bg-[#023E24] rounded-[21px] p-3'>
               <img src={`${process.env.PUBLIC_URL}Image-Assets/svg/management-asset.svg`} alt="" className='w-full'/>
             </div>
             <div className='text-[14px] text-center mt-3'>
@@ -58,7 +58,7 @@ const Solution = () => {
           </div>
 
           <div className='image w-[120px]'>
-            <div className='h-[120px] bg-[#C0C0C0] rounded-[21px] p-3'>
+            <div className='h-[120px] bg-[#023E24] rounded-[21px] p-3'>
               <img src={`${process.env.PUBLIC_URL}Image-Assets/svg/expand-asset.svg`} alt="" className='w-full' />
             </div>
             <div className='text-[14px] text-center mt-3'>
@@ -69,7 +69,7 @@ const Solution = () => {
           </div>
 
           <div className='image w-[120px]'>
-            <div className='h-[120px] bg-[#C0C0C0] rounded-[21px] p-3'>
+            <div className='h-[120px] bg-[#023E24] rounded-[21px] p-3'>
               <img src={`${process.env.PUBLIC_URL}Image-Assets/svg/give-asset.svg`} alt="" className='s' />
             </div>
             <div className='text-[14px] text-center mt-3'>

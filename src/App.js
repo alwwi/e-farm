@@ -10,6 +10,7 @@ import Item from './Pages/Item-Description';
 import Features from './Pages/Features';
 import Collaboration from './Pages/Collaboration';
 import Blog from './Pages/Blog';
+import Cart from './Pages/Cart';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           <Route path="/features" element={<Features />} />
           <Route path="/collaboration" element={<Collaboration />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
     </div>
       </Router>
