@@ -1,0 +1,12 @@
+{
+    "wishlist" : [
+        {
+            "id" : "1",
+            "name" : "Rake/Garpu Tanah",
+            "price" : "120.000",
+            "image" : "/Image-Assets/tools-product/rake.jpg",
+            "location" : "Kab. Sleman",
+            "category" : "farmer-tools"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "cart" : [
+        {
+            "id" : "1",
+            "name" : "Rake/Garpu Tanah",
+            "price" : "120.000",
+            "image" : "/Image-Assets/tools-product/rake.jpg",
+            "category" : "farmer-tools",
+            "quantity" : "2"
+        }
+    ]
+}
