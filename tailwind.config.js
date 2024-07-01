@@ -13,6 +13,9 @@ module.exports = {
         'card': '0px 0px 7px 3px rgba(0, 0, 0, 0.25)',
       },
     },
+    screens: {
+      'laptop': '700px',
+    },
   },
   plugins: [],
 }

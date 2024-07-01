@@ -79,9 +79,9 @@ app.post('/api/updateCart', (req, res) => {
         const cartItem = db.cart.find(item => item.id === id);
         if (!cartItem) return res.status(404).send('Item not found in cart');
 
-            if(cartItem){
+            
                 cartItem.quantity = quantity;
-            }
+            
         
 
         fs.writeFile(filePath, JSON.stringify(db, null, 2), "utf8", (err) => {
