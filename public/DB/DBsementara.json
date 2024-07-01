@@ -41,7 +41,30 @@
       "category": "cattles"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "2",
+      "name": "Vitamin Ayam",
+      "price": "53.000",
+      "image": "/Image-Assets/vitamin/vitamin-ayam.jpg",
+      "description": "Description 1",
+      "specification": "Specification 1",
+      "location": "Kab. Sleman",
+      "category": "vitamin",
+      "quantity": 2
+    },
+    {
+      "id": "3",
+      "name": "Tag nomor sapi",
+      "price": "349.000",
+      "image": "/Image-Assets/accessories/tag-sapi.jpg",
+      "description": "Description 1",
+      "specification": "Specification 1",
+      "location": "Kab. Sleman",
+      "category": "accessories",
+      "quantity": 1
+    }
+  ],
   "wishlist": [
     {
       "id": "1",
