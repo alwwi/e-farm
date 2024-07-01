@@ -58,7 +58,7 @@ const BtnBuy = () => {
         })
     }
     return (
-        <div className='flex bg-[#787878] rounded-[37px] font-poppins gap-3 w-[465px] pl-2'>
+        <div className='flex bg-[#787878] rounded-[37px] font-poppins gap-3 laptop:w-[465px] w-full pl-2'>
             <button className='share' onClick={addToCart}>
                 <img src={`${process.env.PUBLIC_URL}/Image-Assets/svg/btn-cart.svg`} alt="share" width={65} />
             </button>

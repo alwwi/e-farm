@@ -4,9 +4,9 @@ import Footer from '../Components/Footer/Footer'
 const Solution = () => {
   return (
     <div className=''>
-      <div className='mt-[150px] mx-36'>
-        <div className='flex'>
-          <div className='text-left w-[40%]'>
+      <div className='mt-[150px] laptop:mx-36'>
+        <div className='flex flex-col-reverse laptop:flex-row'>
+          <div className='text-left laptop:w-[40%] px-5'>
             <div className='tittle'>
               <h1>Bergabung Menjadi Mitra Kami</h1>
             </div>
@@ -15,13 +15,14 @@ const Solution = () => {
                 e-Farm adalah solusi budidaya ternak end-to-end dan kami sangat terbuka untuk kemitraan. Kami ingin turut meningkatkan budidaya pelanggan dan kembangkan bisnis Anda dengan sumber pendapatan baru. Jika Anda terlibat di industri budidaya ternak, mari bekerja sama!
               </p>
             </div>
-            <div className='button'>
+            <div className='button my-5'>
               <button className='bg-[#BC6949] px-4 py-2 font-semibold text-white rounded-[27px] no-underline'>
                 Bergabung mitra
               </button>
             </div>
           </div>
-          <div className='image w-[40%]'>
+
+          <div className='image w-[40%] m-auto'>
             <img className='float-right' src={`${process.env.PUBLIC_URL}Image-Assets/farmer2-removebg-preview.png`} alt="" />
           </div>
         </div>
@@ -33,7 +34,7 @@ const Solution = () => {
           <h1>Mengapa Harus Bergabung dengan e-Farm?</h1>
         </div>
 
-        <div className='flex gap-20 font-medium'>
+        <div className='flex gap-20 font-medium flex-col laptop:flex-row'>
 
           <div className='image w-[120px]'>
             <div className='h-[120px] bg-[#023E24] rounded-[21px] p-3'>
@@ -83,22 +84,22 @@ const Solution = () => {
 
       </div>
 
-      <div className='mt-[150px] mx-36 border-solid'>
+      <div className='mt-[150px] laptop:mx-36 border-solid'>
         <div>
           <h1>
             Jadilah Mitra Kami
           </h1>
         </div>
 
-        <div className='my-10'>
+        <div className='my-10 p-5 laptop:p-0'>
           <p>
             Bergabunglah dalam misi JALA untuk meningkatkan produktivitas petambak udang dan tingkatkan pendapatan dengan memperkenalkan solusi industri budidaya udang JALA kepada jaringan Anda.
           </p>
         </div>
 
-        <div className='form font-poppins'>
+        <div className='form font-poppins px-5 laptop:p-0'>
           <form action="">
-            <div className='grid grid-cols-2 gap-3'>
+            <div className='grid laptop:grid-cols-2 gap-3'>
               <div className='grid text-left'>
                 <label htmlFor="">First name</label>
                 <input type="text" />
@@ -109,7 +110,7 @@ const Solution = () => {
               </div>
               <div className='grid text-left'>
                 <label htmlFor="">Phone number</label>
-                <input type="text" />
+                <input type="number" />
               </div>
               <div className='grid text-left'>
                 <label htmlFor="">Country</label>

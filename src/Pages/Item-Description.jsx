@@ -39,19 +39,20 @@ const ItemDesc = () => {
     const visible =(view) => {
         setView(view)
     }
+
   return (
-    <div className='bg-[#E3E3E3] w-full py-12 px-40 grid grid-cols-2 mt-12 font-poppins'>
-      <div className='image bg-white w-[500px] h-[570px]  rounded-2xl'>
-        <img src={product.image} alt={product.name}  className='w-full object-cover place-self-center rounded-2xl'/>
+    <div className='bg-[#E3E3E3] w-full py-12 laptop:px-40 flex flex-col laptop:grid laptop:grid-cols-2 mt-12 font-poppins relative'>
+      <div className='image bg-white w-full  laptop:w-[500px] laptop:h-[570px] rounded-2xl'>
+        <img src={product.image} alt={product.name}  className='laptop:w-full w-[380px] object-cover place-self-center rounded-2xl'/>
       </div>
 
 
       <div className='relative'>
-        <div className='name-product bg-white py-3 w-[95%] rounded-[50px] absolute top-0 right-0'>
+        <div className='name-product bg-white py-3 w-[95%] laptop:rounded-[50px] rounded-[20px] laptop:absolute top-0 right-0 mx-2 my-2 laptop:m-0'>
             <h1>{product.name}</h1>
         </div>
 
-        <div className='description w-[95%] h-[410px] bg-white rounded-2xl absolute bottom-0 right-0'>
+        <div className='description laptop:w-[95%] h-[410px] bg-white rounded-2xl laptop:absolute relative bottom-0 right-0'>
             <div className='button bg-[#ADADAD] mx-2 mt-2 p-1 h-[40px] rounded-[15px]'>
                 <button onClick={()=>visible('description')} className={`bg-${view === 'description' ? 'white' : 'transparent'} w-1/2 rounded-[10px] h-full`}>
                     Description
@@ -74,7 +75,7 @@ const ItemDesc = () => {
             )}
         </div>
       </div>
-      <div className='button-buy absolute bottom-5 right-[35%]'>
+      <div className='button-buy mt-3 laptop:m-0 laptop:absolute bottom-5 right-[35%]'>
         <Buy />
       </div>
     </div>
