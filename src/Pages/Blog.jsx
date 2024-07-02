@@ -1,22 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import Footer from '../Components/Footer/Footer'
+import { db, ref, get } from '../ConnectToDB/Firebase-config'
 
 const Blog = () => {
   const [blog, setBlog] = useState([])
 
   useEffect(() => {
-    fetch('/DB/DBblog.json')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok')
+    const fetchData = async () => {
+      try {
+        const productSnapshot = await get(ref(db, 'blog'));
+
+        if (productSnapshot.exists()) {
+          const productData = productSnapshot.val();
+          setBlog(Object.values(productData));
+        } else {
+          console.error('No data available');
         }
-        return response.json()
-      })
-      .then((data) => {
-        setBlog(data.blog)
-      })
-      .catch((error) => console.error('Error fetching data:', error))
-  }, [])
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, [blog])
 
 
   return (

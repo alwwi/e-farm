@@ -1,34 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import Buy from '../Components/BtnBuy'
-// import data from '../ConnectToDB/DBsementara.json'
+import { db, ref, get } from '../ConnectToDB/Firebase-config'
 
 const ItemDesc = () => {
 
     const [view, setView] = useState('description')
-    const [data, setData] = useState(null)
+    const [product, setProduct] = useState(null)
     const { id } = useParams();
 
     useEffect(() => {
-        fetch('/DB/DBsementara.json')
-        .then((response)=>{
-            if(!response.ok){
-                throw new Error('Network response was not ok')
+        const fetchProduct = async () => {
+            try {
+                const productRef = ref(db, `product/${id}`);
+                const snapshot = await get(productRef);
+                if (snapshot.exists()) {
+                    setProduct(snapshot.val());
+                } else {
+                    console.error('Product not found');
+                }
+            } catch (error) {
+                console.error('Error fetching product:', error);
             }
-            return response.json()
-        })
-        .then((data)=>setData(data))
-        .catch((error)=>{
-            console.error('Error fetching data:', error)
-            throw Error
-        })
-    },[])
+        };
 
-    
-    if(!data){
-        return <h1>Data not found</h1>
-    }
-    const product = data.product.find((item) => item.id === id);
+        fetchProduct();
+    }, [id]);
 
     
     if(!product){

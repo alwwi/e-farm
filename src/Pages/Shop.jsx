@@ -1,42 +1,52 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { db,ref, onValue } from '../ConnectToDB/Firebase-config';
 
-const Shop = () => {
-    const [activeButton, setActiveButton] = useState(null)
-    const [product, setProduct] = useState([])
-    const [wishlist, setWishlist] = useState([])
-    const [cart, setCart] = useState([])
-    const [data, setData] = useState(null)
-    const [sideBarOpen, setSideBarOpen] = useState(false)
+const Shop = ({ data }) => {
+    const [activeButton, setActiveButton] = useState(null);
+    const [product, setProduct] = useState([]);
+    const [wishlist, setWishlist] = useState([]);
+    const [cart, setCart] = useState([]);
+    const [sideBarOpen, setSideBarOpen] = useState(false);
 
     useEffect(() => {
-        fetch('/DB/DBsementara.json')
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok')
-                }
-                return response.json()
-            })
-            .then((data) => {
-                setData(data)
-                setProduct(data.product)
-                setWishlist(data.wishlist)
-                setCart(data.cart)
-            })
-            .catch((error) => console.error('Error fetching data:', error))
-    }, [])
+        if (data) {
+            setProduct(data);
+            setWishlist(data.filter(item => item.isWishlist));
+            setCart(data.filter(item => item.isCart));
+        }
+
+        const wishlistRef = ref(db, 'wishlist');
+
+        const unsubscribe = onValue(wishlistRef, (snapshot) => {
+            const wishlistData = snapshot.val();
+            if (wishlistData) {
+                const wishlistArray = Object.keys(wishlistData).map((key) => ({
+                    id: key,
+                    ...wishlistData[key],
+                }));
+                setWishlist(wishlistArray);
+            } else {
+                setWishlist([]);
+            }
+        });
+
+        return () => unsubscribe();
+    }, [data]);
+
+
 
     const show = (category) => {
-        setActiveButton(category)
-        setSideBarOpen(false)
-    }
+        setActiveButton(category);
+        setSideBarOpen(false);
+    };
 
     const filterProduct = activeButton === 'wishlist' ? wishlist
         : activeButton === 'cart' ? cart
             : activeButton ? product.filter((item) => item.category === activeButton)
-                : product
+                : product;
 
-    if (!data) return <h1>Loading...</h1>
+    if (!data) return <h1>Loading...</h1>;
 
     return (
         <div className='flex mt-20 ml-5 '>
@@ -61,7 +71,7 @@ const Shop = () => {
                     <div className='flex flex-col'>
                         <button onClick={() => show('wishlist')} className={`bg-soft-grey h-[40px] rounded-lg font-semibold ${activeButton === 'wishlist' ? 'bg-soft-gray text-black' : 'bg-white text-[#ADADAD]'
                             }`}>
-                            Whislist
+                            Wishlist
                         </button>
 
                         <Link to={'/cart'} onClick={() => show('cart')} className={`bg-soft-grey h-[40px] rounded-lg font-semibold no-underline ${activeButton === 'cart' ? 'bg-soft-gray text-black' : 'bg-white text-[#ADADAD]'
@@ -84,7 +94,7 @@ const Shop = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Shop
+export default Shop;

@@ -8,6 +8,7 @@ export function useAuth() {
 }
 
 export const AuthProvider = ({ children }) => {
+
   const [currentUser, setCurrentUser] = useState(null);
 
   const loginUser = (userData) => {
@@ -27,7 +28,6 @@ export const AuthProvider = ({ children }) => {
         console.log('Logout Failed',error);
     }
   }
-
   
 
   const value = {

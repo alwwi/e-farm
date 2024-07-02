@@ -1,4 +1,4 @@
-import { app } from '../ConnectToDB/Firebase-config';
+import { app } from '../ConnectToDB/Firebase-config.mjs';
 import { getDatabase ,ref, push, child, get} from 'firebase/database';
 import React, { useState } from 'react';
 import {  Button, Form, InputGroup } from 'react-bootstrap';  
